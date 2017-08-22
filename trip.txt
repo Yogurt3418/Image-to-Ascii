@@ -1,0 +1,92 @@
+                    .G;;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHH;                        
+                 .G;.;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHH;                     .   
+              .G;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHH;                    .     
+           .G;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHH.                  .       
+        .G;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHH;                           
+     .G;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHH;                .           
+   ;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHH;               .             
+;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHH;              .            .;;
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHH;                         .;;GGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHH;            .          .;;GGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHH;           .          .;GGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHH.          .        .G;;GGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHH.         .        .;;;GGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHH                 .G;.GGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHH;        .       ;;.;GGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHH                ;;.;;GGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHG       .      ;;..;;;;;GGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHG              ;;.....;GGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHG            .;.....;GGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHG             ...;;;GGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHH;     .      .;;;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHH;     .      ;GGG;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHG     .     .GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHH;    .    .;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHHH;    .    ;GGGGGGGG;;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHHH;    .    .GGGGGGG;;;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGHHHHHHHHHH;    .    .GGGGGG;.;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGHHHHHHHHH;    .    .GGGGG;.;;G;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGG;;HHHHHHHH;    .   .;GGGGG;;;;;;;;;GGGGGGGGGGGGGGGGGGGGGHGGGGGGGHGGGGGGGG
+GGGGGGGGGGGGGGGG;;;;HHHHHHHH;   .   .;GGGG;;;;;.;.;GGGGGGGGGGGGGGGGGGGGHHHHGGGGGHHHGGGGGGGGG
+GGGGGGGGGGGGGGG...;HHHHHHH.   .   ;;GGGGG;......;GGGGGGGGGGGG;;;;GGGHHHHHHGGGHHHHHGG;GGG;;GG
+GGGGGGGGGGGGG;...GHHHHHH.   .  .;;GGGGG;......;GG;;;;GGG;G;.;;;GGGHHHHHHHGHHHHHHHGG;;G;;GG;G
+GGGGGGGGGG;;...;HHHHHH;   .  .;;GGGGG..;;;;;;;;..;;GG;;;....;GGHHHHHHHHGHHHHHHHGG;.;;.;;;;GG
+;;GGGG;;;;;;;;GHHHHH;   .  .;;GGGG;.;;;;;.......;GG;......;GGGHHHHHHHHHHHHHHHGG;....;;;;GG;.
+;GGG;...;GGG;HHHHG    .  .;;GGGG;;;GGG;.....;;;GG;.;..;;;GGG;GGHHHHHHHHHHG;;GG.....;..;;;..;
+GGG...;GGH;GHHH;       .;;GGGG;;GGGG;;;;.;;;GGG;;;.;G;;GGG..;GGGHHHGGG;;.;GG;;;.....;;...;GG
+G;..;GHHGGHHHH.   .  .;;GGGG;;GGGG;G;.;G;;GG;;;;;GG;;GG;.....;GG;;.....;GG;;;;;;.;.....;GGGG
+..;GHHHGHHHH;   .  .;;GGGGG;GGGGGG;;GGGGGGG;G;;GGGGGG;....  ...  ....;GGGGGG;;;;;.;;;;GGGG;;
+;GHHHGHHHH;      .;GGGGGGGGGGGGGG;GGGGGGGGGGGGGGGGG;...         ....;GGGGGGG;G;.;GGGGGGG;G;;
+HHHHHHHH;      .;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG;...          ...;GGGGGGGGG;;GGGGGGGGGGGGGH
+HHHHHHH;  .  .;GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG;..           ...GGGGGGGGGG;;GGGGGGGGGGGGHHHH
+HHHHH.  .  .GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG;..            ..GGGGGGGGGGGGGGGGGHGGGGGGHHHHHH
+HHH.  .   ;GGGGGGGGGGGHGGGGGGGGGGGGGGGGGHHG;.              .GGGGGGGGGGGGHHGGGHGGGGGGHHHHHHHH
+H.     .GGGGGGGGGGGHHHGGGGGGGGGGGGGGGGGGGG.              ;GGGGGGHHGHGGHHGGHHGGGHHGHHHHHHHHHG
+      ;GGGGGGHHGGHHHGGGGGGGGGGGGGGGGG;GG.             .;GG;GGGHHGHGGHHGGHHGGGHHHHHHHHHHHHG. 
+.  .GGGGGGGHHGGHHHGGGGGGGGGGGGGGGHG;;G;.            .GG;;GGGHHHHGGHHHHHHGGGHHHHHHHHHHHHG.   
+ .GGGGGGGHHHGHHGGGGGGGGGGGGGGGGHHG;;;;.          .;G;;GGGHHHHHGHHHHHHGGGGHHHHHHHHHHH;..    ;
+GGGGHGGHHHHHHGGGGGGGGGG;GHGGGGGG;..;.         .;;;.;GHGHHHGGGHHHHHHGGGHHHHHHHHHHHH.      ;GG
+GGHHGHHHHHHG;GGGGGGG;;GGGGGGG;;....         ....;GGGHHGGGGGHHHHHGGHHHHHHHHHHHHHH.      ;GGGG
+HHGHHHHHHG;;GGGGGGG;;GGGGGG;;;..          . ..;;GHHGGGGGHHHHGGGGHHHHHHHHHHHHHH.     .;GGGGHH
+GGHHHHHHG;;GGGGGGG;;G;;GGG...             ...;GGG;;;GGHHHGGGGGHHHHHHHHHHHHHH.     ;GGGGGHG;G
+HHHHHGG;;;G;;GHHHHGG;;;;;..              .;GG;;;;GGHHHGGG;GHHHHHHHHHHHHHH;      ;GGGGGHG;GGH
+HHG;;;.;GGGHHHHHHHG;;...               .;;;;GGHHHGG;;;;;GGGHHHHHHHHHHHH.      ;GGGGGHG;.;GGH
+HG;;;;GHGGG;GHHHHHHG;.               .;GHHHHHHHG;;;..;;GHHHHHHHHHHHHH.      ;GGGGGHH;...;HHH
+;;;GG;....;HHHHGGGG;;...       ..;GGHHHHHHHHGHHG;;..;HHHHHHHHHHHHHH.      ;GGGGGHH;...;GG;;.
+.;G.  .;GHHH;;;;.;;...      .;GG;GG;.;HHHG.;GHG;;;GGHHGGGGHHHHHHH.     .GGGGGGHHG...;GG;..  
+..  ;GHHGG. .....        ...;.;;..;GHHHG. ;G;....;GG;;;GHHHHHHH.    .;GGGGGGHHG...;;G;.     
+  .GHG;.   ..          ....... .GHGGG;  .......;G;;;;GHHHHHHH.     .GGGGGGHHG;...;;;.      .
+..GG;.              ...  ..  .GHG;;.  .  ...;GG;;..GHHHHHHH;     .GGGGGGHHHG..;..;.       ..
+.;..              ..       ..GGG...    ...;G;;;.;GHHHHHHHH.    .GGGGGGHGHG;;;.....          
+               ...        ..;;...    ...;G;.;;;GHHHHHHHH.   .;GGGGGGGGGGG;.;....            
+             ..                    ..;;;;.;;;HHHHHHHHH.   .;GGGGGGGGGGG;......              
+           .                     ..;;;;;;;GHHHHHHHHHG.   ;GGGGGGGGGGGHG......               
+                               ..;;;;;;GHHHHHHHHHHH.   ;GGGGGGGGGHHHG;;..;.                 
+                             ..;;;;;GHHHHHHHHHHHHG.  ;GGGGGGGGHGGGGG;;....                  
+                           .;;;.;GHHHHHHHHHHHHHG.  ;GGGGGGGHG;;;;;;;....                    
+   .                    ..;;;;GGGHHHHHHHHHHHHHG  ;GGGGGGGG;;;;;;;;;;;.                      
+..                   ..;;;;;;;GGHHHHHHHHHHHHG. ;GGGGGHG;;;;..;;;;;;;.                     .;
+.                  ..;;;;;;;;;GGGGHHHHHHHHHG;;GGGGHG;;;.....;;;;;;.                     .;;.
+                 .;;;;;;;;;;;GGGHHHHHHHHHHH;GGGGGG;;;.....;;;;;;;.                    .G;.. 
+              ..;;;;;;;;;;;;GGGGGHHHHHHHG;GGGHG;;;.;;..;;;;;;;;.                    .GG..   
+            .;G;;;;;;;;;;;;GG;;GHHHHHHG;GGHGG;;..;...;..;;;;G;.                   .G;.      
+         .;G;;;;;;;;;;;;;;;;;;GHHHHHH;GGHG;;;......;;.;;;;;;..                  ...         
+      ..GG;;;;;;;;;;;;;;;;;;;GHHHHG;HHGG;;........;;;;;G;...                                
+    .;G;;;;;;;;;;;;;;;;;;;;;GGHHG;HGG;;;..;.......;;;;;....                                 
+ .;;;;;;;;;;;;;;;;;.;;;;;;;GGG;;GG;;;;..........;;;;;;..;.            .                   .;
+;;;;;;;;;;;;;;;;;.;;;;;;;;;;;;GGG;;;..........;;;;;GG.;;.          ...... ..           .;;..
+;;;;;;;;;;;;;;...;;;;;;;;;;;GGG;;;.........;;;;;;GGG;;;.          ........          .;;;;;;;
+;;;;;;;;;;;;...;;;;;;G;;;;GGGG;;..;...;;.;;;;;;GGHH;;;..                        ..GG;;G;;;;;
+;;;;;;;;;;....;;;;;;G;.;GGGG;;..;...;;;.;;;;;GGHHH;;;.                       .;GG;GHG;;;;;;;
+;;;;;;;;......;;;;;G;;GGHG;;;.;.......;;;;;GHHHHH;;;.                     .;GG;GHHG;;;;;;;;;
+;;;;;;;.......;;;;;;GGGGG;;........;.;;;GGHHHHHG..;;.                  .;HG;;HHHG;;;;;;;;;;;
+;.;;;;;;;...;;;;;;GGGGG;;;......;;..;;GHHHHHHHG..;;.               ..GHH;;HHHHHG;;;;;;;;;;;;
+.;;;;;;..;;;G;;;GGGHGG;;.....;;;;;;;GHHHHHHHH;..;;.             ..GHG;;GHHHHHG;;;;;;;;;;;.;;
+;;;;;..;;GG;;;GGGHHG;;....;;;;;;;;GHHHHHHHHH;..;;..          ..;;;.;GHHHHHHGG;;;;;;;;;;;;;;;
+;;;;;;;G;;G;GGGHHG;;..;;;;;;;;;;GHHHHHHHHHH;...;;..       .;;;;.;GHHHHHHHHG;;;;;;;;;;;;;;;..
+;;;;G;;GG;GGGHHGG;;.;;;;;;;;;;GHHHHHHHHHHH;. .;;..     .;;;;.;GHHHHHHHHHGG;;;;;;;;;;;;;;;.;;
+;G;GGGG;GGGHHHG;;.;;;;;;;;;;GHHHHHHHHHHHH;. .;;;....;;G;..;GHHHHHHHHHHGG;;;;;;;;;;;;;;;;;;GG
+;G;;;;GGGHHHG;;.;;;;;;;;;;GHHHHHHHHHHHHHG. .;;;;;;;;...;HHHHHHHHHHHHGG;;;;;;;;;;;;;;;;;GG;G;
+;;G.;GGGHHG;;;.;;;;;;;;;GHHHHHHHHHHHHHHG;...;;;;;..;GHHHHHHHHHHHHHGGG;;;;;;;;;;;;;;;GG;G;;;;
+G..;GHHHGG;;.;;;;;;GG;GHHHHHHHHHHHHHHHH;..;;;;..GHHHHHHHHHHHHHHHHG;;;;;;;;;;;;;;;GGGG;;;;;; 
+.;GGHHHG;;.;;;;;GG;GGHHHHHHHHHHHHHHHHHG;;;;;.;HHHHHHHHHHHHHHHHHGGGG;;;;;;;;;;;G;;G;;;;;;
