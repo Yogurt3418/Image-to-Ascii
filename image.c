@@ -4,24 +4,17 @@
 
 //https://en.wikipedia.org/wiki/BMP_file_format
 
-#define max 3*(256*256)-1 //Maximum filename size
+#define max 3*(256*256)-1 //Maximum file size
 const char no_file[] = "File does not exist";
 const char error[] = "Invalid arguments, run file with no arguments for help\n";
 const char help[] = "./image <filename>\n";
-const char too_big[] = "Image is too large or is corupted, keep filesize under 64k por favor\n";
-const char wrong_bit[] = "This program only supports 24-bit bitmap as of now\n";
+const char too_big[] = "Image is too large or is corupted, keep filesize under 196k por favor\n";
+const char wrong_bit[] = "This program only supports 24-bit bitmap\n";
 
 /*Returns
     0 : Sucess
     1 : You done fucked up
     2 : Overflow probably
-*/
-
-/*Colors
-    0 :  (space)
-    1 : *
-    2 : #
-    3 : $
 */
 
 
@@ -30,7 +23,7 @@ int main(int argc, char *argv[]){
     FILE *image, *dump;
     signed int width, height;
     int c;
-    int i = 0, f = 0, a = 54, x;
+    int i = 0, f = 0, start_point = 0, x, m, h_correction;
 	char *buffer; // Buffer for the hex to dec
 	int image_size;
 	char txt[] = "txt";
@@ -70,13 +63,15 @@ int main(int argc, char *argv[]){
             return 2;
         }
         
-        //buffer = (char *) malloc(image_size); //gets filesize and allocates memory for it
-        
         fseek(image, 0, SEEK_SET);//Back to the start
         
         //Only feed images that are less than 256 X 256
+        fseek(image, 10 , 0); //get width
+        start_point = fgetc(image);
+        
         fseek(image, 18 , 0); //get width
         width = fgetc(image);
+        h_correction = (width%4);
         
         fseek(image, 22 , 0); //get height
         height = fgetc(image);
@@ -88,36 +83,37 @@ int main(int argc, char *argv[]){
             return 2;
         } 
     
-        printf("Image Size -> %d kbs, Width -> %d pxl, Height -> %d pxl\n", image_size/1024, width, height);
+        printf("Image Size -> %d bytes, Width -> %d pxl, Height -> %d pxl, Correction -> %d\n", image_size, width, height, h_correction);
         //For the sake of saving time, just assume headers are all 54 bytes long
         
-        fseek(image, a, 0);
+        fseek(image, 0, SEEK_SET);//Back to the start
+        fseek(image, start_point, 0);
         
         for(x=0; x < height*width; x++){                 //(c = getc(image)) != EOF){
             red = fgetc(image);
             blue = fgetc(image);
             green = fgetc(image);
             
-            //printf("[%d,%d]  R : %d, G : %d, B : %d\n", f, i, red, blue, green);
-            
             avg = ((int)red + (int)blue-1 + (int)green)/3;
             
             if(avg < 51){
-                fprintf(dump, "#");
+                fprintf(dump, "H");
             }else if((avg >= 51) && (avg < 102)){
-                fprintf(dump, "*");
+                fprintf(dump, "G");
             }else if((avg >= 102) && (avg < 153)){
-                fprintf(dump, "^");
+                fprintf(dump, ";");
             }else if((avg >= 153) && (avg < 204)){
-                fprintf(dump, "-");
+                fprintf(dump, ".");
             }else{
                 fprintf(dump, " ");
             }
 
             if(i == width-1){
                 i = 0;
-                f++;
-                fprintf(dump, " BR \n");
+                fprintf(dump, "\n");
+                for(m=0; m < h_correction; m++){
+                    fgetc(image);
+                }
             }else{
                 i++;
             }
