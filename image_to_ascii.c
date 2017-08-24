@@ -4,12 +4,12 @@
 
 //https://en.wikipedia.org/wiki/BMP_file_format
 
-#define max 3*(256*256)-1 //Maximum file size
+#define max (3*256*256)-1 //Maximum file size
 const char no_file[] = "File does not exist";
 const char error[] = "Invalid arguments, run file with no arguments for help\n";
 const char help[] = "./image <filename>\n";
-const char too_big[] = "Image is too large or is corupted, keep filesize under 196k por favor\n";
-const char wrong_bit[] = "This program only supports 24-bit bitmap\n";
+const char too_big[] = "Image is too large or is corupted, keep filesize under 196k or 256*256 por favor\n";
+const char wrong_bit[] = "This program only supports 24-bit bitmap (no alpha channel)\n";
 
 /*Returns
     0 : Sucess
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
         fseek(image, 0, SEEK_SET);//Back to the start
         
         //Only feed images that are less than 256 X 256
-        fseek(image, 10 , 0); //get width
+        fseek(image, 10 , 0); 
         start_point = fgetc(image);
         
         fseek(image, 18 , 0); //get width
@@ -77,6 +77,11 @@ int main(int argc, char *argv[]){
         height = fgetc(image);
         
         fseek(image, 28 , 0); //check that this is a 24 bit bitmap
+        
+        if((width > 256) || (height > 256)){
+            printf("%s", too_big);
+            return 1;
+        }
         
         if(fgetc(image) != 24){
             printf("%s", wrong_bit);
@@ -90,23 +95,34 @@ int main(int argc, char *argv[]){
         fseek(image, start_point, 0);
         
         for(x=0; x < height*width; x++){                 //(c = getc(image)) != EOF){
+            
             red = fgetc(image);
             blue = fgetc(image);
             green = fgetc(image);
             
             avg = ((int)red + (int)blue-1 + (int)green)/3;
             
-            if(avg < 51){
-                fprintf(dump, "H");
-            }else if((avg >= 51) && (avg < 102)){
-                fprintf(dump, "G");
-            }else if((avg >= 102) && (avg < 153)){
+            if(avg < 32){
+                fprintf(dump, "#");
+            }else if((avg >= 32) && (avg < 54)){
+                fprintf(dump, "X");
+            }else if((avg >= 54) && (avg < 72)){
+                fprintf(dump, "I");
+            }else if((avg >= 72) && (avg < 96)){
+                fprintf(dump, "*");
+            }else if((avg >= 96) && (avg < 128)){
+                fprintf(dump, "i");
+            }else if((avg >= 128) && (avg < 150)){
                 fprintf(dump, ";");
-            }else if((avg >= 153) && (avg < 204)){
+            }else if((avg >= 150) && (avg < 187)){
+                fprintf(dump, "^");
+            }else if((avg >= 187) && (avg < 210)){
                 fprintf(dump, ".");
             }else{
                 fprintf(dump, " ");
             }
+            
+            
 
             if(i == width-1){
                 i = 0;
