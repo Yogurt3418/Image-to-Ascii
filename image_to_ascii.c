@@ -5,7 +5,7 @@
 //https://en.wikipedia.org/wiki/BMP_file_format
 
 #define max (3*256*256)-1 //Maximum file size
-const char no_file[] = "File does not exist";
+const char no_file[] = "File does not exist\n";
 const char error[] = "Invalid arguments, run file with no arguments for help\n";
 const char help[] = "./image <filename>\n";
 const char too_big[] = "Image is too large or is corupted, keep filesize under 196k or 256*256 por favor\n";
@@ -13,8 +13,9 @@ const char wrong_bit[] = "This program only supports 24-bit bitmap (no alpha cha
 
 /*Returns
     0 : Sucess
-    1 : You done fucked up
-    2 : Overflow probably
+    1 : Argument Error
+    2 : Image is too large
+    3 : Image is not 24 bit
 */
 
 
@@ -22,79 +23,81 @@ int main(int argc, char *argv[]){
 
     FILE *image, *dump;
     signed int width, height;
-    int c;
-    int i = 0, f = 0, start_point = 0, x, m, h_correction;
-	char *buffer; // Buffer for the hex to dec
+    int i = 0;                                              //Used to determine padding
+    int start_point = 0;
+    int x;                                                  //Counter Variable
+    int m;                                                  //Counter for offset
+    int h_correction;                                       //Each line must be a multiple of 4, this is the amount of padding used to acchive that
 	int image_size;
-	char txt[] = "txt";
 	int avg;
 	
 	unsigned char red, green, blue;
     
 	
-    if (argc == 1){
+    if (argc == 1){                                         //If no file given print a help text
         printf("%s", help);
         return 1;
     }
     
-    if (argc > 2){
+    if (argc > 2){                                          //If more than one argument is given print an error
         printf("%s", error);
         return 1;
     }
     
     
-    image = fopen(argv[1], "r");
+    image = fopen(argv[1], "r");                            //Open the File
     
-    dump = fopen("ascii.txt", "a");
+    dump = fopen("ascii.txt", "a");                         //Open the Dump file
     if(dump == NULL){
-        dump = fopen("ascii.txt", "w");
+        dump = fopen("ascii.txt", "w");                     //If none exists, create an ascii.txt
     }
-    fprintf(dump, "\n\n%s\n", argv[1]);
-    
-    //just add this ascii art to the end of the file and put the filename in front of it
     
     if(image){
         
-        fseek(image, 0, SEEK_END);
+        fseek(image, 0, SEEK_END);                          //Get size of file
         image_size = ftell(image);
         
-        if(image_size > max){
+        if(image_size > max){                               //If image is larger than max value then abort
             printf("%s", too_big);
+            fclose(image);
+            fclose(dump);
             return 2;
         }
         
-        fseek(image, 0, SEEK_SET);//Back to the start
+        fseek(image, 0, SEEK_SET);                          //Back to the start of file
         
-        //Only feed images that are less than 256 X 256
-        fseek(image, 10 , 0); 
+        fseek(image, 10 , 0);                               //Get location of start of image data
         start_point = fgetc(image);
         
-        fseek(image, 18 , 0); //get width
+        fseek(image, 18 , 0);                               //image width
         width = fgetc(image);
-        h_correction = (width%4);
+        h_correction = (width%4);                           //determine the padding at the end of each line
         
-        fseek(image, 22 , 0); //get height
+        fseek(image, 22 , 0);                               //get height
         height = fgetc(image);
         
-        fseek(image, 28 , 0); //check that this is a 24 bit bitmap
-        
-        if((width > 256) || (height > 256)){
+        if((width > 256) || (height > 256)){                //If image is larger than expected then abort
             printf("%s", too_big);
-            return 1;
+            fclose(image);
+            fclose(dump);
+            return 2;
         }
         
-        if(fgetc(image) != 24){
-            printf("%s", wrong_bit);
-            return 2;
-        } 
-    
-        printf("Image Size -> %d bytes, Width -> %d pxl, Height -> %d pxl, Correction -> %d\n", image_size, width, height, h_correction);
-        //For the sake of saving time, just assume headers are all 54 bytes long
+        fseek(image, 28 , 0);                               //check that this is a 24 bit bitmap
         
-        fseek(image, 0, SEEK_SET);//Back to the start
+        if(fgetc(image) != 24){                             //If not then abort
+            printf("%s", wrong_bit);
+            return 3;
+        } 
+        
+        fprintf(dump, "\n\n%s\n", argv[1]);                 //Print name of file before the image dump
+        
+        printf("Image Size -> %d bytes, Width -> %d pxl, Height -> %d pxl, Correction -> %d\n", image_size, width, height, h_correction);
+        
+        //fseek(image, 0, SEEK_SET);//Back to the start
         fseek(image, start_point, 0);
         
-        for(x=0; x < height*width; x++){                 //(c = getc(image)) != EOF){
+        for(x=0; x < height*width; x++){
             
             red = fgetc(image);
             blue = fgetc(image);
@@ -102,7 +105,7 @@ int main(int argc, char *argv[]){
             
             avg = ((int)red + (int)blue-1 + (int)green)/3;
             
-            if(avg < 32){
+            if(avg < 32){                               //Darker colors are lower average numbers
                 fprintf(dump, "#");
             }else if((avg >= 32) && (avg < 54)){
                 fprintf(dump, "X");
@@ -124,26 +127,26 @@ int main(int argc, char *argv[]){
             
             
 
-            if(i == width-1){
-                i = 0;
-                fprintf(dump, "\n");
-                for(m=0; m < h_correction; m++){
+            if(i == width-1){                           //If you have read all color data from a line, i keeps track of this
+                i = 0;                                  //Some padding may still remain
+                fprintf(dump, "\n");                    //Print new line
+                for(m=0; m < h_correction; m++){        //skip the padding
                     fgetc(image);
                 }
             }else{
-                i++;
+                i++;                                    //we arent at the end of a line
             }
         }
     
     
-        //after everything is done
-        free(buffer);
+                                                        //after everything is done
         printf("\n");
         fclose(image);
         fclose(dump);
         return 0;
-    }else{
+    }else{                                              //If the file never opens to begin with 
         printf("%s\n",no_file);
+        fclose(dump);
         return 1;
     }
 }
