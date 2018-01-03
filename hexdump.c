@@ -58,15 +58,17 @@ int main(int argc, char *argv[]){
     
     int final = 0;
     
+    fprintf(dump, "            0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F\n");
+    
     while(!done){                                       //it quits before it can print out          (c = fgetc(source)) != EOF
         
         if (i == line_size){
             
             i = 0;
-            fprintf(dump, "\n%x : ", L & 0xff);         //Print location in memory
+            fprintf(dump, "\n%04x   :   ", L & 0xff);         //Print location in memory
             
             for(x=0; x<line_size; x++){
-                fprintf(dump, "%x  ", current[x] & 0xff);
+                fprintf(dump, "%02x  ", current[x] & 0xff);
             }
             fprintf(dump ,"           ");               //Buffer
             
