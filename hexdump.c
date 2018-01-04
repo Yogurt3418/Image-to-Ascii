@@ -22,10 +22,9 @@ int main(int argc, char *argv[]){
     char c;
     int  done=0;
     int  i=0, L=-line_size, x;
+    int  filesize;
     
-    
-    if (argc == 1){                                             //Running program with no arguments shows a help screen
-        
+    if (argc == 1){                                             //Running program with no arguments shows a help text
         printf("%s", help);
         return 1;
     }
@@ -48,19 +47,21 @@ int main(int argc, char *argv[]){
         dump = fopen(dumpfile, "w");                            //If none exists, create an one
     }
     
+    fseek(source, 0, SEEK_END);
+    filesize = ftell(source);
     
     fseek(source, 0, SEEK_SET);                                 //Go to start of file
     
     fprintf(dump,"%s\n", argv[1]);
-    //get into the array
-    //check each variable of the array
     
     int final = 0;
     
     fprintf(dump, "                0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F              0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n");
     //make a loop to print out each of the numbers rather than having this header string
     
-    while(!done){                                               //Read 16 bytes at a time into an array and print out that array once in hex and once in ascii
+    int H=0;
+    
+    while(!done){
         
         if (i == line_size){                                    //If the 16 bytes of memory have been read
             
@@ -68,31 +69,29 @@ int main(int argc, char *argv[]){
             fprintf(dump, "\n%08x   :   ", L & 0xffff);         //Print location in memory
             
             for(x=0; x<line_size; x++){
-                fprintf(dump, "%02x   ", current[x] & 0xff);  //Print out each byte separated by two spaces
+                fprintf(dump, "%02x   ", current[x] & 0xff);    //Print out each byte separated by two spaces
             }
             fprintf(dump ,"           ");                       //Buffer
             
             for(x=0; x<line_size; x++){                         
-                if(current[x] > 31){                            //If the byte being read is an ascii character (hex value larger than 31)
-                    fprintf(dump, "%c  ", current[x]);          //Print the actual character
-                }
-                else{                                           //Otherwise it has no visible character
-                    fprintf(dump, ".  ");                       //Just print a period in its place
-                }
+                if (current[x] > 31) { fprintf(dump, "%c  ", current[x]); }                  //If the byte being read is an ascii character (hex value larger than 31) just print the character
+                else { fprintf(dump, ".  "); }                  //Otherwise it has no visible character, just print a period in its place
             }
             
-            if (final){done = 1;}                               //If we have reached the end of the file and do not need to print out anymore
+            if (final){
+                done = 1;
+            }
         }
+        
         c = fgetc(source);                                      //Read one byte into c
-        if(c == EOF){final = 1;}                                //If we have read the end of the file then this is the last time we need to print anything out
-            
+        
+        if(H >= filesize){final = 1;}    
         current[i] = c;                                         //put new byte into the data array
         
         i++;                                                    //Increment the byte counter
         L+=(line_size/16);                                      //Increment the memory address
+        H++;
     }
-    
-    
     
     fprintf(dump, "\n\n");
     fclose(dump);                                               //Close everything and exit
