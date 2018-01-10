@@ -5,6 +5,7 @@ const char error[] = "Can not locate file";
 const char help[] = "Enter the name of a file and have the contents printed in hex\n";
 const char option_f[] = "-f";
 
+//Don't use this anymore, use the hexdump.c program instead
 
 int main(int argc, char *argv[]){
     
